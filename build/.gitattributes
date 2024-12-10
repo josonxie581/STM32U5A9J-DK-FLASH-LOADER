@@ -1,0 +1,2 @@
+LLVM19/bin/clang-cl.exe filter=lfs diff=lfs merge=lfs -text
+output/stm32h573.bin filter=lfs diff=lfs merge=lfs -text

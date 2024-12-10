@@ -1,0 +1,310 @@
+import os
+import shutil
+import subprocess
+import tempfile
+import json
+import SCons
+from SCons.Script import Glob, Environment, Default, Exit
+
+import SCons.Defaults
+from SConsVariants import basic_config 
+
+# 自动烧录配置
+def auto_program_action(target, source, env):
+    """
+    自动烧录动作
+    """
+    try:
+        # 获取完整的 ELF 文件路径，并转换为绝对路径
+        elf_file = os.path.abspath(str(source[0]))
+        
+        # 检查 ELF 文件是否存在
+        if not os.path.exists(elf_file):
+            print(f"错误：ELF 文件不存在 {elf_file}")
+            return 1
+        
+        # J-Link 烧录命令
+        jlink_device = 'STM32H573II'  # 根据你的芯片型号调整
+        
+        # 创建临时 J-Link 脚本
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.jlink', encoding='utf-8') as f:
+            f.write(f"""device {jlink_device}
+            speed 4000
+            h
+            loadfile "{elf_file}"
+            r
+            g
+            q
+            """)
+            jlink_script_path = f.name
+        
+        # 查找 JLinkExe 的完整路径
+        def find_jlink_exe():
+            # 尝试多种可能的路径
+            possible_paths = [
+                r'C:\Program Files\SEGGER\JLink\JLink.exe',
+            ]
+            
+            # 首先检查环境变量
+            env_path = os.environ.get('JLINK_PATH')
+            if env_path and os.path.exists(env_path):
+                return env_path
+            
+            # 检查系统 PATH
+            system_path = shutil.which('JLink')
+            if system_path:
+                return system_path
+            
+            # 检查预定义路径
+            for path in possible_paths:
+                if os.path.exists(path):
+                    return path
+            
+            # 如果都找不到
+            raise FileNotFoundError("未找到 JLink.exe,请确保已安装 J-Link 工具并配置系统路径")
+        
+        try:
+            jlink_exe = find_jlink_exe()
+        except FileNotFoundError as e:
+            print(str(e))
+            return 1
+        
+        # 执行 J-Link 烧录命令
+        cmd = [
+            jlink_exe, 
+            '-device', jlink_device, 
+            '-speed', '4000', 
+            '-if', 'SWD', 
+            '-CommanderScript', jlink_script_path
+        ]
+        
+        print(f"烧录命令: {' '.join(cmd)}")
+        print(f"ELF 文件: {elf_file}")
+        print(f"J-Link 脚本: {jlink_script_path}")
+        print(f"J-Link 可执行文件: {jlink_exe}")
+        
+        # 使用 subprocess 执行命令
+        try:
+            result = subprocess.run(
+                cmd, 
+                check=True, 
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            print("烧录成功：")
+            print(result.stdout)
+            print(result.stderr)
+            return 0
+        except subprocess.CalledProcessError as e:
+            print("烧录失败：")
+            print("标准输出：", e.stdout)
+            print("错误输出：", e.stderr)
+            return 1
+    
+    except Exception as e:
+        print(f"发生异常：{e}")
+        import traceback
+        traceback.print_exc()
+        return 1
+    finally:
+        # 清理临时脚本
+        if 'jlink_script_path' in locals() and os.path.exists(jlink_script_path):
+            os.remove(jlink_script_path)
+
+# 定义输出目录
+output_dir = 'output'
+
+
+# 确保输出目录存在
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# 设置工具链路径
+LLVM_PATH = r'D:\LLVM\LLVM19\bin'
+ARM_PATH = r'D:\LLVM\arm-none-eabi'
+JLINK_PATH = r'C:\Program Files\SEGGER\JLink'       # 修改为实际安装路径
+JLINK_EXEC = os.path.join(JLINK_PATH, 'JLink.exe')  # 确保文件名正确
+
+# 验证 JLink 工具是否存在
+if not os.path.isfile(JLINK_EXEC):
+    print(f"错误: 找不到 JLink.exe，路径为 {JLINK_EXEC}")
+    Exit(1)
+
+# 将工具链路径添加到系统 PATH
+os.environ['PATH'] = LLVM_PATH + os.pathsep + os.environ['PATH']
+os.environ['PATH'] = ARM_PATH + os.pathsep + os.environ['PATH']
+os.environ['PATH'] = JLINK_PATH + os.pathsep + os.environ['PATH']
+
+# 创建构建环境
+env = Environment(
+    ENV=os.environ,
+    TOOLS=['clang', 'as', 'cc', 'clangxx', 'ar', 'link'],
+    CC=os.path.join(LLVM_PATH, 'clang'),
+    CXX=os.path.join(LLVM_PATH, 'clang++'),
+    AS=os.path.join(LLVM_PATH, 'clang'),
+    LINK=os.path.join(LLVM_PATH, 'ld.lld'),
+    AR=os.path.join(LLVM_PATH, 'llvm-ar'),
+    RANLIB=os.path.join(LLVM_PATH, 'llvm-ranlib'),
+    OBJCOPY=os.path.join(LLVM_PATH, 'llvm-objcopy')
+)
+
+ 
+
+env.Tool('compilation_db')
+compilation_db = env.CompilationDatabase(os.path.join("#", "compile_commands.json"))
+BUILD_TARGETS += compilation_db
+
+
+# 设置环境变量 PATH
+env.PrependENVPath('PATH', LLVM_PATH)
+env.PrependENVPath('PATH', ARM_PATH)
+env.PrependENVPath('PATH', JLINK_PATH)
+ 
+
+
+# 目标架构配置
+TARGET_TRIPLE = 'armv8m.main-none-eabi'  # 修改为正确的目标三元组
+MCU = 'armv8m.main'  # 修改为正确的 CPU 架构
+
+# 定义宏
+env.Append(CPPDEFINES=["STM32U5XX", "USE_HAL_DRIVER"])
+
+# 编译标志
+COMMON_FLAGS = [
+    '--target=' + TARGET_TRIPLE,
+    '-march=' + MCU,
+    '-mthumb',
+    '-fno-exceptions',
+    '-fno-rtti',
+    '-ffunction-sections',  
+    '-fdata-sections',
+    '-fvisibility=default',
+    '-march=' + MCU,
+    '-mthumb',
+    '-mfloat-abi=hard',
+    '-mfpu=fpv5-sp-d16',
+    '-g',                      # 基本调试信息
+    '-ggdb',                   # GDB调试信息
+    '-gdwarf-2',              # 使用DWARF2格式
+    '-fno-omit-frame-pointer', # 保留帧指针
+    '-O0',                     # 禁用优化以保持调试信息
+    '-mlittle-endian',
+    '-mcmse',
+    '-Wall',
+    '-fverbose-asm'           # 生成带注释的汇编
+]
+
+# C 编译标志
+env.Append(CFLAGS=COMMON_FLAGS + [
+    '-std=c11',
+    '-Wall',
+    '-Wextra',
+    '-O0',
+    '-mfpu=fpv4-sp-d16',  # 指定FPU
+    '-mfloat-abi=hard',    # 使用硬件浮点ABI
+    '-Wno-return-type'  # 禁用返回类型警告
+    #以下两个选项用于启用函数和数据的分段优化，以减小最终生成的可执行文件的大小。配合链接时的 --gc-sections 选项使用
+    # '-ffunction-sections',
+    # '-fdata-sections',
+    # '-g3',
+    # '-Oz'
+])
+
+# 汇编标志
+env.Append(ASFLAGS=COMMON_FLAGS + [
+    '-c',
+    '-x', 'assembler-with-cpp'
+])
+
+# 链接标志
+env.Append(LINKFLAGS=[
+    f'--sysroot={ARM_PATH}',
+    f'-T{os.path.abspath("startup/STM32_FLASH.ld")}',
+    '-nostdlib',
+    '-L' + os.path.join(ARM_PATH, 'lib'),
+    '-L' + os.path.join(ARM_PATH, 'arm-none-eabi/lib'),
+    '-lc',
+    '-lclang_rt.builtins',
+    '-ldummyhost',
+    '--print-memory-usage',
+    '-Map',
+    os.path.join(output_dir, 'STM32U5A9.map'),
+    '--export-dynamic'         # 导出所有符号
+])
+
+
+
+# 包含路径
+env.Append(CPPPATH=[
+    'Includes/CMSIS',
+    'Includes/Library',
+    'Includes/Loader',
+    'D:\STM32U5X9\STM32Cube_FW_U5_V1.6.0\Drivers\STM32U5xx_HAL_Driver\Inc',
+    'startup',
+    os.path.join(ARM_PATH, 'include'),
+    os.path.join(ARM_PATH, 'arm-none-eabi/include')
+])
+
+
+
+# 源文件
+c_sources = Glob('Sources/Loader/*.c') + Glob('Sources/Library/*.c') #+ ['startup/loader_startup.c']  # 添加启动文件
+# asm_sources = ['startup/startup_stm32u5a9xx.s']
+
+# 定义函数，将源文件映射到输出目录中的对象文件
+def obj_path(source):
+    basename = os.path.splitext(os.path.basename(str(source)))[0]
+    return os.path.join(output_dir, basename + '.o')
+
+# # 分别编译汇编和 C 源文件,输出到指定的 output 目录
+# asm_objects = [env.Object(obj_path(src), src) for src in asm_sources]
+c_objects = [env.Object(obj_path(src), src) for src in c_sources]
+
+# # 设置自定义编译输出字符串
+env['ASCOMSTR'] = "Compile... $SOURCE ."
+env['CCCOMSTR'] = "Compile... $SOURCE ."
+
+# 分别编译汇编和 C 源文件，输出到指定的 output 目录
+# asm_objects = [obj_path(src) for src in asm_sources]
+c_objects = [obj_path(src) for src in c_sources]
+
+# 生成 ELF 文件
+elf_file = env.Program(
+    target=os.path.join(output_dir, 'STM32U5A9.elf'),
+    # source=asm_objects + c_objects,
+    source= c_objects,
+    PROGSUFFIX='.elf'
+)
+
+# 生成 STLDR 文件
+stldr_file = env.Command(
+    target=os.path.join(output_dir, 'STM32U5A9X.stldr'),
+    source=elf_file,
+    action=Copy('$TARGET', '$SOURCE')
+)
+
+
+# 生成 HEX 文件
+hex_file = env.Command(
+    target=os.path.join(output_dir, 'STM32U5A9.hex'),
+    source=elf_file,
+    action='$OBJCOPY -O ihex $SOURCE $TARGET'
+)
+
+# 添加烧录目标，依赖于 ELF 文件
+flash_target = env.Command(
+    target=os.path.join(output_dir, 'flash'), # 将 'flash' 目标放入 output 目录
+    source=elf_file,
+    action=auto_program_action
+)
+
+# 创建别名 'flash' 以便调用烧录命令
+env.Alias('flash', flash_target)
+ 
+
+# 设置默认目标，包括编译和烧录
+# Default([elf_file,  hex_file, 'flash'])  #加入 'flash' 目标,就可以使用 'scons flash' 自动命令烧录
+
+# 更新 Default 目标以包含 stldr 文件
+Default([elf_file, hex_file, stldr_file])

@@ -1,0 +1,122 @@
+[
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\Dev_Inf.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Loader\\Dev_Inf.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Loader\\Dev_Inf.c",
+        "output": "output\\Dev_Inf.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\Loader_Src.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Loader\\Loader_Src.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Loader\\Loader_Src.c",
+        "output": "output\\Loader_Src.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\mx25um51245g.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\mx25um51245g.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\mx25um51245g.c",
+        "output": "output\\mx25um51245g.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5x9j_discovery.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5x9j_discovery.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5x9j_discovery.c",
+        "output": "output\\stm32u5x9j_discovery.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5x9j_discovery_ospi.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5x9j_discovery_ospi.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5x9j_discovery_ospi.c",
+        "output": "output\\stm32u5x9j_discovery_ospi.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal.c",
+        "output": "output\\stm32u5xx_hal.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_cortex.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_cortex.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_cortex.c",
+        "output": "output\\stm32u5xx_hal_cortex.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_dma.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_dma.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_dma.c",
+        "output": "output\\stm32u5xx_hal_dma.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_dma_ex.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_dma_ex.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_dma_ex.c",
+        "output": "output\\stm32u5xx_hal_dma_ex.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_flash.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_flash.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_flash.c",
+        "output": "output\\stm32u5xx_hal_flash.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_flash_ex.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_flash_ex.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_flash_ex.c",
+        "output": "output\\stm32u5xx_hal_flash_ex.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_gpio.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_gpio.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_gpio.c",
+        "output": "output\\stm32u5xx_hal_gpio.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_ospi.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_ospi.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_ospi.c",
+        "output": "output\\stm32u5xx_hal_ospi.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_pwr.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_pwr.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_pwr.c",
+        "output": "output\\stm32u5xx_hal_pwr.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_pwr_ex.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_pwr_ex.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_pwr_ex.c",
+        "output": "output\\stm32u5xx_hal_pwr_ex.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_rcc.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_rcc.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_rcc.c",
+        "output": "output\\stm32u5xx_hal_rcc.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_rcc_ex.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_rcc_ex.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_rcc_ex.c",
+        "output": "output\\stm32u5xx_hal_rcc_ex.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_hal_xspi.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_hal_xspi.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_hal_xspi.c",
+        "output": "output\\stm32u5xx_hal_xspi.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\stm32u5xx_ll_dlyb.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\stm32u5xx_ll_dlyb.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\stm32u5xx_ll_dlyb.c",
+        "output": "output\\stm32u5xx_ll_dlyb.o"
+    },
+    {
+        "command": "D:\\LLVM\\LLVM19\\bin\\clang -o output\\system_stm32u5xx.o -c --target=armv8m.main-none-eabi -march=armv8m.main -mthumb -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -fvisibility=default -march=armv8m.main -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -g -ggdb -gdwarf-2 -fno-omit-frame-pointer -O0 -mlittle-endian -mcmse -Wall -fverbose-asm -std=c11 -Wall -Wextra -O0 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wno-return-type -DSTM32U5XX -DUSE_HAL_DRIVER -IIncludes\\CMSIS -IIncludes\\Library -IIncludes\\Loader -ID:\\STM32U5X9\\STM32Cube_FW_U5_V1.6.0\\Drivers\\STM32U5xx_HAL_Driver\\Inc -Istartup -ID:\\LLVM\\arm-none-eabi\\include -ID:\\LLVM\\arm-none-eabi\\arm-none-eabi\\include Sources\\Library\\system_stm32u5xx.c",
+        "directory": "D:\\LLVM_XXX_B",
+        "file": "Sources\\Library\\system_stm32u5xx.c",
+        "output": "output\\system_stm32u5xx.o"
+    }
+]
